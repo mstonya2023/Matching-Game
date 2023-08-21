@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+  grid-template-columns: 3;
+  grid-template-rows:3 ;
+  }
+  
+  title {
+  
+  
+  }
+  
+  h1 {
+  
+    
+  }
+    
+  
+  
+  
+  #main {
+  
+    
+  
+  }
+  
+  
+  
+  
+  button {
+  
+   
+  }
+  
+  button:hover {
+  
+  }
