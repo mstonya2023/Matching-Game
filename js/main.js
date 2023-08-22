@@ -1,6 +1,6 @@
 /*----- constants -----*/
 //  Audio countdown timer for clock
-
+// Each of the card objects will used twice
 const SOURCE_CARDS = [
 	{img: 'https://imgur.com/a/ehoC97z'    	, matched: false},
 	{img: 'https://imgur.com/8somayG'		, matched: false},
@@ -10,7 +10,7 @@ const SOURCE_CARDS = [
 	{img: 'https://imgur.com/0S1Suxa'		, matched: false}
 ];
 
-
+const CARD_BACK = 'https://imgur.com/nhNQQMq'; 
 
 
 /*----- state variables -----*/
