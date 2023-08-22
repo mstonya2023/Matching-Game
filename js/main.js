@@ -1,6 +1,18 @@
 /*----- constants -----*/
 //  Audio countdown timer for clock
 
+const SOURCE_CARDS = [
+	{img: 'https://imgur.com/a/ehoC97z'    	, matched: false},
+	{img: 'https://imgur.com/8somayG'		, matched: false},
+	{img: 'https://imgur.com/GME3odj'		, matched: false},
+	{img: 'https://imgur.com/7By2XLx'		, matched: false},
+	{img: 'https://imgur.com/rvGcGes'		, matched: false},
+	{img: 'https://imgur.com/0S1Suxa'		, matched: false}
+];
+
+
+
+
 /*----- state variables -----*/
 let board; //insert card template/work with grid/flex for board appearance
 let boardAnimation; //--initiate click function to flip cards//chosen card disappears//cards intro shuffling(bonus)
