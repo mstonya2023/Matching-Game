@@ -17,12 +17,12 @@ const CARD_BACK = 'imgs/black.png';
 /*----- state variables -----*/
 let cards; //Array of 12 shuffled card objects
 let firstcardChoice;
-
+let ignoreClks;
 /*----- cached elements  -----*/
-
+const messageEl= document.querySelector('h3');
 
 /*----- event listeners -----*/
-
+document.querySelector('main').addEventListener('click', handChoice);
 
 /*----- functions -----*/
 
@@ -33,6 +33,8 @@ init();
 function init() {
 	cards = getShuffledCards();
 	firstcardChoice = null;
+	badNum = 0; //initialize
+	ignoreClks = false;
 	render();
 }
 function render() {
@@ -40,6 +42,7 @@ function render() {
 		const imgEl = document.getElementById(idx);
 		const src = (cards.matched || card === firstcardChoice)  ? card.img : CARD_BACK ;
 		imgEl.src = src;
+		messageEl.innerHTML = `Bad Count: ${badNum}`;
 	});
 }
 
@@ -47,7 +50,7 @@ function getShuffledCards() {
 	let tmpCards = [];
 	let cards = [];
 	for (let card of SOURCE_CARDS) {
-		tmpCards.push(card, card);
+		tmpCards.push({...card}, {...card});
 	}
 	while (tmpCards.length) {
 		let rndIdx = Math.floor(Math.random() * tmpCards.length);
@@ -56,6 +59,25 @@ function getShuffledCards() {
 	}
 	return cards;
 
+}
+//Update state and then call render//
+function handChoice(evt) {
+	const cardIdx = parseInt(evt.target.id);
+	if (isNaN(cardIdx) || ignoreClks ) return;
+	const card = cards[cardIdx];
+	if (firstcardChoice) {
+		if (firstcardChoice.img === card.img) {
+			firstcardChoice.matched = card.matched = true;
+			firstcardChoice = null;
+		} else {
+			badNum++;
+		}
+	
+	}else {
+	firstcardChoice = card;
+
+	}
+	render();
 }
 
 
