@@ -3,7 +3,7 @@
   font-family: helvetica;
 }
 
-body {
+body {  
   height: 100vh;
   margin: 0;
   display: flex;
@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+
+
+
+
 main {
 
   display: grid;
@@ -19,6 +23,8 @@ main {
   grid-template-rows: repeat(4, 15vmin);
   gap: 2vmin;
 }
+
+
 
 img {
   width: 100%;
