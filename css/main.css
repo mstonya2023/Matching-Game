@@ -30,7 +30,19 @@ h3 {
   margin-top: 0;
 }
 
+
 button {
- text-decoration-color: blue;
- 
+  margin-top: 4vmin;
+  padding: 2vmin;
+  font-size: 2vmin;
+  border-radius: 4vmin;
+  border: 0.1vmin solid grey;
+  color:#d4af37 ;
+  background-color: #280a0c;
+  
+}
+
+button:hover {
+  color:#280a0c ;
+  background-color:floralwhite; 
 }
