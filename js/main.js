@@ -1,6 +1,5 @@
 /*----- constants -----*/
-//  Audio countdown timer for clock``
-// Each of the card objects will used twice
+
 const SOURCE_CARDS = [
 	{ img: 'imgs/tan.png', matched: false },
 	{ img: 'imgs/blue.png', matched: false },
@@ -8,29 +7,27 @@ const SOURCE_CARDS = [
 	{ img: 'imgs/orange.png', matched: false },
 	{ img: 'imgs/rainbow.png', matched: false },
 	{ img: 'imgs/red.png', matched: false },
-
-];
+]
 
 const CARD_BACK = 'imgs/gold.png';
-
 /*----- state variables -----*/
-let cards; //Array of 12 shuffled card objects
+let cards;
 let firstcardChoice;
 let ignoreClks;
 let secondcardChoice;
 let gameStatus;
+
 /*----- cached elements  -----*/
 const messageEl = document.querySelector('h2');
 const buttonEl = document.querySelector('button');
+
 /*----- event listeners -----*/
 document.querySelector('main').addEventListener('click', handChoice);
 buttonEl.addEventListener('click', init);
+
 /*----- functions -----*/
 
-// Initialize all state and then call render//
-
 init();
-
 function init() {
 	cards = getShuffledCards();
 	firstcardChoice = null;
@@ -51,7 +48,7 @@ function render() {
 		buttonEl.style.visibility = 'visible';
 
 	} else if (gameStatus === 'lose') {
-		messageEl.innerHTML = `YOU LOSE! TRY AGAIN!; Bad Count: ${badNum}`;
+		messageEl.innerHTML = `YOU LOSE! TRY AGAIN! Bad Count: ${badNum}`;
 		buttonEl.style.visibility = 'visible';
 
 	} else {
@@ -74,7 +71,7 @@ function getShuffledCards() {
 	return cards;
 
 }
-//Update state and then call render//
+
 function handChoice(evt) {
 	const cardIdx = parseInt(evt.target.id);
 	if (isNaN(cardIdx) || ignoreClks || gameStatus) return;
