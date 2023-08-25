@@ -13,7 +13,6 @@ const SOURCE_CARDS = [
 
 const CARD_BACK = 'imgs/gold.png';
 
-
 /*----- state variables -----*/
 let cards; //Array of 12 shuffled card objects
 let firstcardChoice;
@@ -21,11 +20,11 @@ let ignoreClks;
 let secondcardChoice;
 let gameStatus;
 /*----- cached elements  -----*/
-const messageEl = document.querySelector('h3');
+const messageEl = document.querySelector('h2');
 const buttonEl = document.querySelector('button');
 /*----- event listeners -----*/
 document.querySelector('main').addEventListener('click', handChoice);
-buttonEl.addEventListener('click', init );
+buttonEl.addEventListener('click', init);
 /*----- functions -----*/
 
 // Initialize all state and then call render//
@@ -50,11 +49,11 @@ function render() {
 	if (gameStatus === 'win') {
 		messageEl.innerHTML = `YOU WIN!`;
 		buttonEl.style.visibility = 'visible';
-		
-	} else if (gameStatus === 'lose'){
-		messageEl.innerHTML = `YOU LOSE! TRY AGAIN! Bad Count: ${badNum}`;
+
+	} else if (gameStatus === 'lose') {
+		messageEl.innerHTML = `YOU LOSE! TRY AGAIN!; Bad Count: ${badNum}`;
 		buttonEl.style.visibility = 'visible';
-		
+
 	} else {
 		buttonEl.style.visibility = 'hidden';
 		messageEl.innerHTML = `Bad Count: ${badNum}`;
@@ -87,7 +86,7 @@ function handChoice(evt) {
 			firstcardChoice.matched = secondcardChoice.matched = true;
 			firstcardChoice = null;
 			secondcardChoice = null;
-			if(cards.every(card => card.matched === true)){
+			if (cards.every(card => card.matched === true)) {
 				gameStatus = 'win';
 			}
 		} else {
@@ -99,7 +98,7 @@ function handChoice(evt) {
 				console.log('hi');
 				firstcardChoice = null;
 				secondcardChoice = null;
-				render ();
+				render();
 			}, 600);
 
 		}
@@ -112,7 +111,7 @@ function handChoice(evt) {
 }
 
 
-	
+
 
 
 

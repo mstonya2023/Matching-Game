@@ -3,7 +3,9 @@
   font-family: helvetica;
 }
 
-body {  
+body {
+  background-color: #d4af37;
+
   height: 100vh;
   margin: 0;
   display: flex;
@@ -12,19 +14,12 @@ body {
   align-items: center;
 }
 
-
-
-
-
 main {
-
   display: grid;
   grid-template-columns: repeat(4, 15vmin);
   grid-template-rows: repeat(4, 15vmin);
   gap: 2vmin;
 }
-
-
 
 img {
   width: 100%;
@@ -33,4 +28,9 @@ img {
 
 h3 {
   margin-top: 0;
+}
+
+button {
+ text-decoration-color: blue;
+ 
 }
